@@ -18,8 +18,6 @@ It scores candidates, runs **live collision checks** (GitHub / web / registries)
 npx skills add robinv8/namebrew
 ```
 
-[Install](#install) · [Usage](#usage) · [Example](#example) · [How it works](#how-it-works) · [Schools](#naming-schools)
-
 ---
 
 ## Why
@@ -39,79 +37,27 @@ If your README is 40 lines of Rust and one emoji, this is for you.
 
 ## Install
 
-Default path: the [skills CLI](https://skills.sh) (`npx skills`). It discovers `SKILL.md` in this repo and installs into your coding agents (Claude Code, Codex, Cursor, Grok Build, and [many more](https://github.com/vercel-labs/skills#supported-agents)).
+Via the [skills CLI](https://skills.sh) — it discovers `SKILL.md` in this repo and installs into your coding agents (Claude Code, Codex, Cursor, Grok Build, and [many more](https://github.com/vercel-labs/skills#supported-agents)):
 
 ```bash
-# Interactive: pick agents / scope
-npx skills add robinv8/namebrew
-
-# Global (user-level), non-interactive
-npx skills add robinv8/namebrew -g -y
-
-# Project-level only
-npx skills add robinv8/namebrew -y
-
-# Target specific agents
-npx skills add robinv8/namebrew -a claude-code -a grok -g -y
+npx skills add robinv8/namebrew          # interactive: pick agents / scope
+npx skills add robinv8/namebrew -g -y    # global, non-interactive
 ```
 
-Useful extras:
+Extras: `--list` to preview without installing, `npx skills use robinv8/namebrew@namebrew` to try the prompt only, `npx skills update namebrew` to update later.
 
-```bash
-# List skills in this repo without installing
-npx skills add robinv8/namebrew --list
-
-# Try without installing (prompt only)
-npx skills use robinv8/namebrew@namebrew
-
-# Update later
-npx skills update namebrew
-```
-
-Discover on [skills.sh](https://skills.sh/robinv8/namebrew).
-
-### Manual / development only
-
-You usually **do not** need this. Prefer `npx skills add` so the skill lands in each agent’s skills directory correctly.
-
-```bash
-# Contribute or hack on the skill
-git clone https://github.com/robinv8/namebrew.git
-cd namebrew
-# optional: wire into one agent while developing
-ln -sfn "$(pwd)" <agent-skills-dir>/namebrew   # e.g. ~/.grok/skills/namebrew
-# or
-npx skills add ./namebrew -g -y
-```
+Hacking on the skill itself: see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ---
 
 ## Usage
-
-### Slash or natural language
 
 ```text
 /namebrew
 Name an open-source CLI that cleans leftover Mac app files.
 ```
 
-```text
-Use namebrew: I need a name for a tool that rewrites my X posts to be punchier.
-Prefer short English, animal or everyday-object vibe.
-```
-
-### What to tell it
-
-| Input | Example |
-|-------|---------|
-| **Intent** | One line: what it does, for whom |
-| **Surface** | CLI / library / desktop / web / agent skill |
-| **Language** | Short English / pinyin / JP-reading / mixed |
-| **Tone** | Minimal, animal, cultural, humor, abbrev, object… |
-| **Constraints** | Avoid words, package rules, max syllables |
-| **Family** | Standalone vs product line (e.g. Kaku–Waza–Kami) |
-
-Skip fields you do not care about — the skill asks only for what is missing.
+Tell it whatever you have — **intent** (one line: what it does, for whom), **surface** (CLI / library / desktop / web), **language** (short English / pinyin / JP-reading), **tone**, **constraints**, **standalone vs product line**. Skip what you do not care about; the skill asks only for what is missing.
 
 ---
 
@@ -129,7 +75,7 @@ Skip fields you do not care about — the skill asks only for what is missing.
 
 Plus collision notes, names to **avoid** (Taken/Risky), and optional logo prompts.
 
-**Strong vs weak (built into the skill):**
+Strong vs weak, built into the skill:
 
 ```text
 Intent: Pack any URL into a tiny desktop app.
@@ -137,7 +83,7 @@ Strong: Pake, Wrap, Shell
 Weak:   Web2Desktopify, ElectronLiteApp, Packly
 ```
 
-*(Pake itself is a real shipped project — shown as a style exemplar; a live run would mark it **Taken**.)*
+*(Pake itself is a real shipped project — style exemplar; a live run would mark it **Taken**.)*
 
 ---
 
@@ -147,13 +93,7 @@ Weak:   Web2Desktopify, ElectronLiteApp, Packly
 Frame → Diverge (16–24) → Score → Collision search → Top 5 + Avoid list
 ```
 
-1. **Frame** intent, surface, tone schools  
-2. **Diverge** across naming schools  
-3. **Score** length, speak, fit, draw, install  
-4. **Search** GitHub / web / npm · PyPI · crates (best-effort)  
-5. **Deliver** ranked names with **Clear / Crowded / Taken / Risky** labels  
-
-No Top 5 without live search. Short dictionary words are often *Crowded*, not free — the skill says so.
+Ranked names carry **Clear / Crowded / Taken / Risky** labels from live GitHub / web / npm · PyPI · crates checks. No Top 5 without live search — short dictionary words are often *Crowded*, not free, and the skill says so.
 
 Details: [`references/collision-check.md`](./references/collision-check.md)
 
@@ -172,66 +112,21 @@ Details: [`references/collision-check.md`](./references/collision-check.md)
 | G | Domain compound | Clear blend | firecrawl, dayjs, zoxide |
 | H | Nickname | Spoken diminutive | Maccy, heynote, aider |
 
-Full catalog: [`references/naming-patterns.md`](./references/naming-patterns.md)  
-Reject list: [`references/anti-patterns.md`](./references/anti-patterns.md)
-
----
-
-## Principles
-
-1. **Short** — prefer 1–3 syllables  
-2. **Speakable** — easy in English (and Mandarin when relevant)  
-3. **Drawable** — maps to a simple icon or emoji  
-4. **One-line story** — name ↔ product in ≤12 words  
-5. **Installable** — good as `npm` / binary / repo id  
-6. **Search before ship** — memory is not availability  
-7. **Families** — shared linguistic world, not prefix spam  
-
----
-
-## Layout
-
-```text
-namebrew/
-├── SKILL.md                 # Agent entry (frontmatter + process)
-├── assets/
-│   ├── logo.png             # Master mark (1024)
-│   ├── logo-128.png
-│   ├── logo-64.png
-│   └── logo-32.png          # Favicon-scale
-├── references/
-│   ├── naming-patterns.md   # Schools + exemplar makers
-│   ├── anti-patterns.md     # Hard/soft rejects
-│   └── collision-check.md   # GitHub / web / registry playbook
-├── CONTRIBUTING.md
-├── LICENSE                  # MIT
-└── README.md
-```
+Full catalog: [`references/naming-patterns.md`](./references/naming-patterns.md) · Reject list: [`references/anti-patterns.md`](./references/anti-patterns.md)
 
 ---
 
 ## Not for
 
-- Legal trademark clearance (search is best-effort; humans decide)  
-- Enterprise brand systems and naming agencies  
-- Guaranteeing `.com` / npm forever free  
+- Legal trademark clearance (search is best-effort; humans decide)
+- Enterprise brand systems and naming agencies
+- Guaranteeing `.com` / npm forever free
 
 ---
 
 ## Contributing
 
-PRs welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md).
-
-Ideas that land well:
-
-- Sharper few-shots (strong vs weak)  
-- New schools that stay short / speakable / drawable  
-- Better collision heuristics  
-- Install notes for more agents  
-
-Keep `SKILL.md` operational; put long catalogs under `references/`.
-
----
+PRs welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md). Keep `SKILL.md` operational; long catalogs go under `references/`.
 
 ## License
 
@@ -239,7 +134,7 @@ Keep `SKILL.md` operational; put long catalogs under `references/`.
 
 ## Credits
 
-Naming craft studied from these makers. Links go to their **GitHub profiles**. Style references only — **do not** copy trademarks or logos.
+Naming craft studied from these makers (links go to their **GitHub profiles**; style references only — do **not** copy trademarks or logos):
 
 [tw93](https://github.com/tw93) ·
 [charmbracelet](https://github.com/charmbracelet) ·
