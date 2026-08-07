@@ -17,27 +17,27 @@ Not a corporate brand-name generator. Produces scored name tables, optional prod
 
 ```bash
 # User-level (all projects)
-git clone https://github.com/<you>/indie-naming.git ~/.grok/skills/indie-naming
+git clone https://github.com/robinv8/indie-naming.git ~/.grok/skills/indie-naming
 
 # Or symlink while developing
-ln -s /path/to/indie-naming ~/.grok/skills/indie-naming
+ln -sfn /path/to/indie-naming ~/.grok/skills/indie-naming
 ```
 
-If your agent loads from `~/.agents/skills` or `.grok/skills` in a repo:
+If your agent loads from `~/.agents/skills` or a project `.grok/skills`:
 
 ```bash
-git clone https://github.com/<you>/indie-naming.git ~/.agents/skills/indie-naming
+git clone https://github.com/robinv8/indie-naming.git ~/.agents/skills/indie-naming
 # or
-git clone https://github.com/<you>/indie-naming.git .grok/skills/indie-naming
+git clone https://github.com/robinv8/indie-naming.git .grok/skills/indie-naming
 ```
 
-### Skills CLI (when published)
+### Skills CLI
 
 ```bash
-npx skills add <you>/indie-naming -g -y
+npx skills add robinv8/indie-naming -g -y
 ```
 
-Replace `<you>` with your GitHub username or org after you push the repo.
+> Repo URL assumes GitHub user `robinv8`. Change the owner if you fork or rename.
 
 ## Usage
 
