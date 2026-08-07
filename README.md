@@ -67,11 +67,12 @@ Use indie-naming: I need a name for a tool that rewrites my X posts to be punchi
 ### Output shape
 
 1. Direction (schools chosen)
-2. Top 5 table — name, reading, school, story, icon cue, install id
-3. Other candidates
-4. Optional product-line family
-5. Manual checks (GitHub/npm/crates, domain, trademark)
-6. Optional logo prompts for Top 3
+2. **Live collision search** (GitHub + web + registries) — required before Top picks
+3. Top 5 table — name, story, install id, **Availability** (Clear / Crowded / Taken / Risky)
+4. Collision notes + “Avoid / already used”
+5. Other candidates
+6. Optional product-line family
+7. Optional logo prompts for Top 3
 
 ## Layout
 
@@ -96,9 +97,9 @@ indie-naming/
 
 ## Not for
 
-- Full legal trademark clearance (skill flags checks; humans decide)
+- Full legal trademark clearance (skill runs best-effort web/GitHub/registry search; humans decide)
 - Enterprise brand systems and naming agencies
-- Guaranteeing domain/npm availability
+- Guaranteeing domain/npm availability forever
 
 ## Contributing
 

@@ -52,6 +52,7 @@ If intent is vague, ask **one** clarifying question, then proceed with stated as
 5. **Not corporate** — reject InventedSaaS (Lyra, Nexlify, Syncora), forced vowels, `-ify`/`-ly` spam
 6. **Installable** — lowercase, no spaces; hyphens only when idiomatic (`open-webui` style)
 7. **Family optional** — multi-product lines share a linguistic world, not prefix spam
+8. **Search before you ship** — do **not** recommend Top names on memory alone; run live collision checks (web + GitHub + registries)
 
 ## Naming schools (pick 1–2 per batch)
 
@@ -90,7 +91,7 @@ For each: `name | school | one-line story | drawable cue | install id`.
 
 ### 3. Converge (score)
 
-Score 1–5 on each dimension:
+Score 1–5 on each dimension (Availability starts as a **pre-check estimate** only):
 
 | Dimension | 5 means |
 |-----------|---------|
@@ -98,12 +99,49 @@ Score 1–5 on each dimension:
 | Speak | No ambiguity in EN (and CN if relevant) |
 | Fit | Story matches intent |
 | Draw | Obvious simple icon |
-| Available-ish | Unlikely collision with famous projects (best-effort; flag manual check) |
+| Availability | Later: filled from live search (step 4) |
 | Install | Good package / binary name |
 
-Keep **top 8–12**. Drop corporate, unreadable, or undrawable options.
+Keep a **shortlist of 10–16** quality names. Drop corporate, unreadable, or undrawable options.  
+Do **not** finalize Top 5 until step 4 finishes.
 
-### 4. Families (optional)
+### 4. Collision search (required)
+
+**Always** run live checks before presenting Top recommendations. Memory/recall is not enough.
+
+For each shortlist name (at least the top ~10–12 contenders), check:
+
+| Check | How (prefer tools) | Hard fail if |
+|-------|--------------------|--------------|
+| **GitHub** | `gh search repos "<name>" --limit 10` and/or `gh api search/repositories?q=<name>+in:name` | Same/near-exact repo name with meaningful stars (≥~500) or famous owner in the same domain |
+| **Web** | Web search: `"<name>"` open source / CLI / app / npm | Established product, SaaS, or well-known OSS with that exact brand |
+| **npm** (if JS/TS likely) | `npm view <name> name` or registry search | Package exists with real downloads / same idea |
+| **PyPI** (if Python likely) | `pip index versions <name>` or pypi.org search | Same |
+| **crates.io** (if Rust likely) | crates.io search / `cargo search <name>` | Same |
+| **Domain** (optional, if product/site) | Whois or search `<name>.dev` / `.com` mention | Skip unless user cares; note only |
+
+Parallelize tool calls when possible. Use install id (lowercase) for registry checks.
+
+#### Verdict labels (use these exact words)
+
+| Label | Meaning |
+|-------|---------|
+| **Clear** | No meaningful collision found in checks run |
+| **Crowded** | Name is a common word or many weak hits; usable with distinct positioning |
+| **Taken** | Active project/product/package with same or confusingly similar name |
+| **Risky** | Famous brand / trademark-adjacent; do not recommend for Top |
+
+#### Ranking rules after search
+
+1. Prefer **Clear** over **Crowded** over **Taken**
+2. **Taken** or **Risky** → drop from Top 5 (may list under “Avoid / already used” with links)
+3. If too many fail, **diverge again** (step 2) with alternate spellings or school shifts, then re-check
+4. Be honest: short dictionary words are often **Crowded**, not truly free — say so
+5. This is **not** legal trademark clearance; say “best-effort search” once in the deliverable
+
+Details and commands: `references/collision-check.md`.
+
+### 5. Families (optional)
 
 If the user wants a line (or ≥2 related tools), propose **1–2 mini-families** of 3 names sharing a world, e.g.:
 
@@ -111,7 +149,9 @@ If the user wants a line (or ≥2 related tools), propose **1–2 mini-families*
 - `lazy*` set
 - animal set under one author brand
 
-### 5. Deliver
+Only use family members that passed collision search (Clear or acceptable Crowded).
+
+### 6. Deliver
 
 Use this structure (localize section titles only if the user writes in another language):
 
@@ -120,25 +160,34 @@ Use this structure (localize section titles only if the user writes in another l
 [1–2 sentences: schools chosen and why]
 
 ## Top 5
-| Name | Reading | School | One-line story | Icon cue | Install id |
-|------|---------|--------|----------------|----------|------------|
+| Name | Reading | School | One-line story | Icon cue | Install id | Availability |
+|------|---------|--------|----------------|----------|------------|--------------|
+| … | … | … | … | … | … | Clear / Crowded |
+
+## Collision notes
+Brief per Top name: what was checked + notable hits (repo/url if any). Cite search results when available.
 
 ## Other candidates
-[table or bullets of 5–7]
+[Clear/Crowded only; table of 5–7]
+
+## Avoid / already used
+| Name | Why | Evidence |
+|------|-----|----------|
+| … | Taken / Risky | link or package |
 
 ## Product line (if any)
 [family + how names relate]
 
-## Manual checks
-- [ ] Search GitHub / crates.io / npm / PyPI
+## Still verify manually
 - [ ] Domain / social handles (if needed)
 - [ ] Trademark skim (if commercial)
+- [ ] Org-specific registry you use
 
 ## Logo / image prompts (optional)
 One English image prompt each for Top 3 (flat app icon, 2 colors, drawable cue)
 ```
 
-### 6. Logo handoff (only if asked)
+### 7. Logo handoff (only if asked)
 
 Do **not** generate images unless the user asks. Provide prompts:
 
@@ -160,12 +209,14 @@ Reject or rewrite if:
 - Collides with household OSS (react, vue, redis, ollama, …) — call out and replace
 - Unreadable pinyin pile or awkward English clusters
 - Pure feature sentence as a name, unless Demo-first and the user wants that school (`screenshot-to-code`)
+- **Top 5 was built without live collision search** — invalid deliverable; go back to step 4
 
 ## Collaboration style
 
 - Concise; tables over prose
 - Give **options with tradeoffs**, not one true name
 - Prefer installable short names over poetic long titles
+- Always show **Availability** and evidence for Top picks
 - After the user picks a name, offer tagline, README H1, emoji badge, icon brief — **only on request**
 
 ## Few-shot reasoning
@@ -186,3 +237,4 @@ Reject or rewrite if:
 
 - Pattern catalog and exemplar developers: `references/naming-patterns.md`
 - Reject patterns: `references/anti-patterns.md`
+- Live collision checks: `references/collision-check.md`

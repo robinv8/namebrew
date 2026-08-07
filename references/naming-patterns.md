@@ -103,9 +103,11 @@ Reference for `indie-naming`. Prefer schools that match the user's tone; cite ex
 ## Scoring rubric (copy into runs)
 
 ```text
-Length  Speak  Fit  Draw  Collision  Install  | Total
-  /5     /5    /5   /5      /5        /5      | /30
+Length  Speak  Fit  Draw  Availability  Install  | Total
+  /5     /5    /5   /5        /5*          /5    | /30
 ```
+
+\*Availability is filled **after** live collision search (`references/collision-check.md`), not from memory.
 
 Ship candidates with total ≥ 22 when possible; explain any lower score kept for taste.
 
