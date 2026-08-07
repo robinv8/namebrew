@@ -205,4 +205,33 @@ Keep `SKILL.md` operational; put long catalogs under `references/`.
 
 ## Credits
 
-Inspired by naming craft in the indie OSS community. Exemplars are **style references only** — do not copy trademarks or logos.
+Naming craft studied from these makers. Links go to their **GitHub profiles**. Style references only — **do not** copy trademarks or logos.
+
+[tw93](https://github.com/tw93) ·
+[charmbracelet](https://github.com/charmbracelet) ·
+[louislam](https://github.com/louislam) ·
+[sharkdp](https://github.com/sharkdp) ·
+[jesseduffield](https://github.com/jesseduffield) ·
+[junegunn](https://github.com/junegunn) ·
+[antfu](https://github.com/antfu) ·
+[sindresorhus](https://github.com/sindresorhus) ·
+[sxyazi](https://github.com/sxyazi) ·
+[DIYgod](https://github.com/DIYgod) ·
+[lencx](https://github.com/lencx) ·
+[iamkun](https://github.com/iamkun) ·
+[exelban](https://github.com/exelban) ·
+[p0deje](https://github.com/p0deje) ·
+[casey](https://github.com/casey) ·
+[ggerganov](https://github.com/ggerganov) ·
+[karpathy](https://github.com/karpathy) ·
+[folke](https://github.com/folke) ·
+[pmndrs](https://github.com/pmndrs) ·
+[derailed](https://github.com/derailed) ·
+[wagoodman](https://github.com/wagoodman) ·
+[jarun](https://github.com/jarun) ·
+[chubin](https://github.com/chubin) ·
+[heyman](https://github.com/heyman) ·
+[emilkowalski](https://github.com/emilkowalski) ·
+[fatedier](https://github.com/fatedier)
+
+Signature names and schools: [`references/naming-patterns.md`](./references/naming-patterns.md).
