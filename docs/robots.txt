@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://namebrew.robinren.me/sitemap.xml
