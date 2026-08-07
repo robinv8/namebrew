@@ -1,6 +1,6 @@
 # Collision check playbook
 
-Required before finalizing Top recommendations in `indie-naming`.
+Required before finalizing Top recommendations in `namebrew`.
 
 ## Goal
 

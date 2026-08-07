@@ -1,10 +1,10 @@
 # Contributing
 
-Thanks for helping improve **indie-naming**.
+Thanks for helping improve **namebrew**.
 
 ## Scope
 
-This repo is an **agent skill**: instructions an LLM follows to name indie/OSS projects.
+This repo is an **agent skill**: instructions an LLM follows to *brew* short names for indie/OSS projects.
 
 - Prefer small, focused PRs
 - Keep `SKILL.md` short and operational
@@ -27,12 +27,12 @@ This repo is an **agent skill**: instructions an LLM follows to name indie/OSS p
 ## Local use while developing
 
 ```bash
-ln -sfn "$(pwd)" ~/.grok/skills/indie-naming
+ln -sfn "$(pwd)" ~/.grok/skills/namebrew
 # or
-ln -sfn "$(pwd)" ~/.agents/skills/indie-naming
+ln -sfn "$(pwd)" ~/.agents/skills/namebrew
 ```
 
-Then trigger `/indie-naming` or ask for indie-style project names in your agent.
+Then trigger `/namebrew` or ask for indie-style project names in your agent.
 
 ## PR checklist
 

@@ -1,6 +1,6 @@
 # Indie naming patterns & exemplars
 
-Reference for `indie-naming`. Prefer schools that match the user's tone; cite exemplars as **style**, never copy trademarks as logos.
+Reference for `namebrew`. Prefer schools that match the user's tone; cite exemplars as **style**, never copy trademarks as logos.
 
 ## Schools (detailed)
 

@@ -1,25 +1,28 @@
 ---
-name: indie-naming
+name: namebrew
 description: >
-  Craft short, memorable project/product names in the style of indie open-source
+  Brew short, memorable project/product names in the style of indie open-source
   developers (tw93, charmbracelet, louislam, sharkdp, antfu). Produces scored
-  name tables, product-line families, and logo-ready imagery notes — not
-  corporate SaaS brand decks. Use when the user wants project naming, product
-  naming, open-source naming, indie naming, repo/package names, 起名, 项目名,
-  产品命名, or runs /indie-naming. Prefer this over generic brand-name generators
-  when the vibe is personal tools, CLI, desktop utilities, or solo/small-team OSS.
+  name tables with live collision checks, product-line families, and logo-ready
+  imagery notes — not corporate SaaS brand decks. Use when the user wants project
+  naming, product naming, open-source naming, indie naming, repo/package names,
+  起名, 项目名, 产品命名, or runs /namebrew. Prefer this over generic brand-name
+  generators when the vibe is personal tools, CLI, desktop utilities, or
+  solo/small-team OSS.
 metadata:
-  short-description: "Indie OSS project naming (tw93-style)"
+  short-description: "Brew short indie OSS project names"
 ---
 
-# Indie Naming
+# Namebrew
 
-Generate **personal-developer** project names: short, speakable, drawable, optionally
-family-consistent. Model after makers like tw93, charmbracelet, louislam, sharkdp,
-jesseduffield, antfu — **not** enterprise brand systems (Looka / Namelix corporate tone).
+**Namebrew** generates **personal-developer** project names: short, speakable, drawable,
+optionally family-consistent. Model after makers like tw93, charmbracelet, louislam,
+sharkdp, jesseduffield, antfu — **not** enterprise brand systems (Looka / Namelix
+corporate tone).
 
 Load `references/naming-patterns.md` for the pattern catalog and exemplar tables.
 Load `references/anti-patterns.md` when the user keeps picking weak names.
+Load `references/collision-check.md` for live availability checks.
 
 Respond in the **user's language** for the final write-up, but keep internal school
 codes (A–H), install ids, and image prompts in English.

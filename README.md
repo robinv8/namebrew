@@ -1,13 +1,13 @@
-# indie-naming
+# namebrew
 
-Agent skill for crafting **short, memorable project names** in the style of indie open-source developers — [tw93](https://github.com/tw93), [charmbracelet](https://github.com/charmbracelet), [louislam](https://github.com/louislam), [sharkdp](https://github.com/sharkdp), [antfu](https://github.com/antfu), and similar makers.
+**Brew short, memorable project names** in the style of indie open-source developers — [tw93](https://github.com/tw93), [charmbracelet](https://github.com/charmbracelet), [louislam](https://github.com/louislam), [sharkdp](https://github.com/sharkdp), [antfu](https://github.com/antfu), and similar makers.
 
-Not a corporate brand-name generator. Produces scored name tables, optional product-line families, and logo-ready imagery notes.
+Not a corporate brand-name generator. Produces scored name tables, **live collision checks**, optional product-line families, and logo-ready imagery notes.
 
 ## What you get
 
 - **8 naming schools** — cultural short words, animals, life objects, lazy humor, ultra-short ids, pinyin brands, domain compounds, nicknames
-- **A fixed process** — frame → diverge → score → top picks → manual availability checks
+- **A fixed process** — frame → diverge → score → **collision search** → top picks
 - **Anti-patterns** — reject SaaS salad (`Nexlify`, `Syncora`) and unreadable feature dumps
 - **Logo handoff** — optional English image prompts for app icons (generate only when asked)
 
@@ -17,24 +17,24 @@ Not a corporate brand-name generator. Produces scored name tables, optional prod
 
 ```bash
 # User-level (all projects)
-git clone https://github.com/robinv8/indie-naming.git ~/.grok/skills/indie-naming
+git clone https://github.com/robinv8/namebrew.git ~/.grok/skills/namebrew
 
 # Or symlink while developing
-ln -sfn /path/to/indie-naming ~/.grok/skills/indie-naming
+ln -sfn /path/to/namebrew ~/.grok/skills/namebrew
 ```
 
 If your agent loads from `~/.agents/skills` or a project `.grok/skills`:
 
 ```bash
-git clone https://github.com/robinv8/indie-naming.git ~/.agents/skills/indie-naming
+git clone https://github.com/robinv8/namebrew.git ~/.agents/skills/namebrew
 # or
-git clone https://github.com/robinv8/indie-naming.git .grok/skills/indie-naming
+git clone https://github.com/robinv8/namebrew.git .grok/skills/namebrew
 ```
 
 ### Skills CLI
 
 ```bash
-npx skills add robinv8/indie-naming -g -y
+npx skills add robinv8/namebrew -g -y
 ```
 
 > Repo URL assumes GitHub user `robinv8`. Change the owner if you fork or rename.
@@ -44,14 +44,14 @@ npx skills add robinv8/indie-naming -g -y
 In a compatible agent (Grok, Claude Code, Codex, etc.):
 
 ```text
-/indie-naming
+/namebrew
 Name an open-source CLI that cleans leftover Mac app files.
 ```
 
 Or natural language:
 
 ```text
-Use indie-naming: I need a name for a tool that rewrites my X posts to be punchier.
+Use namebrew: I need a name for a tool that rewrites my X posts to be punchier.
 ```
 
 ### What to provide
@@ -77,11 +77,12 @@ Use indie-naming: I need a name for a tool that rewrites my X posts to be punchi
 ## Layout
 
 ```text
-indie-naming/
+namebrew/
 ├── SKILL.md                      # Agent instructions (entry point)
 ├── references/
 │   ├── naming-patterns.md        # Schools + exemplar developers
-│   └── anti-patterns.md          # Reject / rewrite rules
+│   ├── anti-patterns.md          # Reject / rewrite rules
+│   └── collision-check.md        # Live availability playbook
 ├── LICENSE
 └── README.md
 ```
