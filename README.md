@@ -1,6 +1,12 @@
 # namebrew
 
-**Brew short names for indie software — not SaaS brand salad.**
+<p align="center">
+  <img src="assets/logo.png" alt="namebrew logo" width="160" height="160" />
+</p>
+
+<p align="center">
+  <strong>Brew short names for indie software — not SaaS brand salad.</strong>
+</p>
 
 An [agent skill](./SKILL.md) that helps you name open-source tools the way makers like [tw93](https://github.com/tw93), [charmbracelet](https://github.com/charmbracelet), [louislam](https://github.com/louislam), [sharkdp](https://github.com/sharkdp), and [antfu](https://github.com/antfu) do: short, speakable, drawable, and installable.
 
@@ -188,6 +194,11 @@ Reject list: [`references/anti-patterns.md`](./references/anti-patterns.md)
 ```text
 namebrew/
 ├── SKILL.md                 # Agent entry (frontmatter + process)
+├── assets/
+│   ├── logo.png             # Master mark (1024)
+│   ├── logo-128.png
+│   ├── logo-64.png
+│   └── logo-32.png          # Favicon-scale
 ├── references/
 │   ├── naming-patterns.md   # Schools + exemplar makers
 │   ├── anti-patterns.md     # Hard/soft rejects
