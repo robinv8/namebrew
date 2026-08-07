@@ -6,6 +6,12 @@ An [agent skill](./SKILL.md) that helps you name open-source tools the way maker
 
 It scores candidates, runs **live collision checks** (GitHub / web / registries), and can hand off logo prompts. It will not invent *Nexlify* for you.
 
+[![skills.sh](https://skills.sh/b/robinv8/namebrew)](https://skills.sh/robinv8/namebrew)
+
+```bash
+npx skills add robinv8/namebrew
+```
+
 [Install](#install) · [Usage](#usage) · [Example](#example) · [How it works](#how-it-works) · [Schools](#naming-schools)
 
 ---
@@ -27,35 +33,50 @@ If your README is 40 lines of Rust and one emoji, this is for you.
 
 ## Install
 
-Works with agents that load skills from a local folder (Grok Build, Claude Code, Codex, etc.).
-
-### Clone into your skills directory
+Default path: the [skills CLI](https://skills.sh) (`npx skills`). It discovers `SKILL.md` in this repo and installs into your coding agents (Claude Code, Codex, Cursor, Grok Build, and [many more](https://github.com/vercel-labs/skills#supported-agents)).
 
 ```bash
-# Grok
-git clone https://github.com/robinv8/namebrew.git ~/.grok/skills/namebrew
+# Interactive: pick agents / scope
+npx skills add robinv8/namebrew
 
-# Common agents path
-git clone https://github.com/robinv8/namebrew.git ~/.agents/skills/namebrew
-
-# Project-local
-git clone https://github.com/robinv8/namebrew.git .grok/skills/namebrew
-```
-
-### Symlink while developing
-
-```bash
-git clone https://github.com/robinv8/namebrew.git ~/src/namebrew
-ln -sfn ~/src/namebrew ~/.grok/skills/namebrew
-```
-
-### Skills CLI
-
-```bash
+# Global (user-level), non-interactive
 npx skills add robinv8/namebrew -g -y
+
+# Project-level only
+npx skills add robinv8/namebrew -y
+
+# Target specific agents
+npx skills add robinv8/namebrew -a claude-code -a grok -g -y
 ```
 
-Reload skills / restart the agent if it does not pick up new folders automatically.
+Useful extras:
+
+```bash
+# List skills in this repo without installing
+npx skills add robinv8/namebrew --list
+
+# Try without installing (prompt only)
+npx skills use robinv8/namebrew@namebrew
+
+# Update later
+npx skills update namebrew
+```
+
+Discover on [skills.sh](https://skills.sh/robinv8/namebrew).
+
+### Manual / development only
+
+You usually **do not** need this. Prefer `npx skills add` so the skill lands in each agent’s skills directory correctly.
+
+```bash
+# Contribute or hack on the skill
+git clone https://github.com/robinv8/namebrew.git
+cd namebrew
+# optional: wire into one agent while developing
+ln -sfn "$(pwd)" ~/.grok/skills/namebrew
+# or
+npx skills add ./namebrew -g -y
+```
 
 ---
 

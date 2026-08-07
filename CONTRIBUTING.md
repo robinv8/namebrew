@@ -26,10 +26,12 @@ This repo is an **agent skill**: instructions an LLM follows to *brew* short nam
 
 ## Local use while developing
 
+Prefer installing from the local checkout via the skills CLI (same path users take, minus the remote):
+
 ```bash
+npx skills add . -g -y
+# or symlink into one agent while iterating
 ln -sfn "$(pwd)" ~/.grok/skills/namebrew
-# or
-ln -sfn "$(pwd)" ~/.agents/skills/namebrew
 ```
 
 Then trigger `/namebrew` or ask for indie-style project names in your agent.
