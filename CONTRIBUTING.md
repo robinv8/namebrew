@@ -31,7 +31,7 @@ Prefer installing from the local checkout via the skills CLI (same path users ta
 ```bash
 npx skills add . -g -y
 # or symlink into one agent while iterating
-ln -sfn "$(pwd)" ~/.grok/skills/namebrew
+ln -sfn "$(pwd)" <agent-skills-dir>/namebrew   # e.g. ~/.grok/skills/namebrew
 ```
 
 Then trigger `/namebrew` or ask for indie-style project names in your agent.

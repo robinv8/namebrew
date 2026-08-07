@@ -73,7 +73,7 @@ You usually **do not** need this. Prefer `npx skills add` so the skill lands in 
 git clone https://github.com/robinv8/namebrew.git
 cd namebrew
 # optional: wire into one agent while developing
-ln -sfn "$(pwd)" ~/.grok/skills/namebrew
+ln -sfn "$(pwd)" <agent-skills-dir>/namebrew   # e.g. ~/.grok/skills/namebrew
 # or
 npx skills add ./namebrew -g -y
 ```
@@ -130,6 +130,8 @@ Intent: Pack any URL into a tiny desktop app.
 Strong: Pake, Wrap, Shell
 Weak:   Web2Desktopify, ElectronLiteApp, Packly
 ```
+
+*(Pake itself is a real shipped project — shown as a style exemplar; a live run would mark it **Taken**.)*
 
 ---
 

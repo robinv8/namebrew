@@ -57,17 +57,22 @@ Query ideas (use web_search or equivalent):
 Only when the product language fits; skip others to save time.
 
 ```bash
-# npm
+# npm — existence
 npm view NAME name version 2>/dev/null || echo "npm: free or missing"
 
-# PyPI
-curl -s "https://pypi.org/pypi/NAME/json" | head -c 200
+# npm — real adoption (downloads, last month)
+curl -s "https://api.npmjs.org/downloads/point/last-month/NAME"
 
-# crates.io
-curl -s "https://crates.io/api/v1/crates?q=NAME&per_page=5"
+# PyPI — 404 means free
+curl -s -o /dev/null -w "%{http_code}\n" "https://pypi.org/pypi/NAME/json"
+
+# crates.io — API requires a User-Agent header
+curl -s -A "namebrew-collision-check" "https://crates.io/api/v1/crates?q=NAME&per_page=5"
+# or
+cargo search NAME --limit 5
 ```
 
-**Interpret:** Same-name package with real adoption → **Taken** for that ecosystem. Empty 404 → better for **Clear**.
+**Interpret:** Same-name package with real adoption (not a zero-download placeholder) → **Taken** for that ecosystem. Missing / 404 → better for **Clear**; near-zero downloads → note as **Crowded**, not Taken.
 
 ### 4. Optional: domains & social
 
@@ -81,7 +86,7 @@ Do not block Top 5 solely on `.com` unavailability for OSS tools.
 ## Batching
 
 1. Score quality first → shortlist 10–16  
-2. Collision-check shortlist in **parallel** tool calls  
+2. Collision-check the top ~6–8 shortlist names in **parallel** tool calls (every Top 5 candidate must be checked; spot-check the rest)  
 3. Assign **Clear / Crowded / Taken / Risky**  
 4. Promote Top 5 only from Clear + acceptable Crowded  
 5. List Taken/Risky under **Avoid / already used** with links  

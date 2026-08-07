@@ -112,7 +112,7 @@ Do **not** finalize Top 5 until step 4 finishes.
 
 **Always** run live checks before presenting Top recommendations. Memory/recall is not enough.
 
-For each shortlist name (at least the top ~10–12 contenders), check:
+For each shortlist name (at least the top ~6–8 contenders — every Top 5 candidate must be fully checked), check:
 
 | Check | How (prefer tools) | Hard fail if |
 |-------|--------------------|--------------|
@@ -141,6 +141,7 @@ Parallelize tool calls when possible. Use install id (lowercase) for registry ch
 3. If too many fail, **diverge again** (step 2) with alternate spellings or school shifts, then re-check
 4. Be honest: short dictionary words are often **Crowded**, not truly free — say so
 5. This is **not** legal trademark clearance; say “best-effort search” once in the deliverable
+6. In **Collision notes**, state which checks actually ran for each Top name; a Top name with no checks listed is an invalid deliverable
 
 Details and commands: `references/collision-check.md`.
 
@@ -223,6 +224,8 @@ Reject or rewrite if:
 - After the user picks a name, offer tagline, README H1, emoji badge, icon brief — **only on request**
 
 ## Few-shot reasoning
+
+These show strong/weak *shape*, not availability: **Mole** and **Pake** are real shipped projects, and a live run (step 4) would mark them **Taken** and replace them.
 
 **Intent:** Mac terminal cleaner for leftover app files.  
 **Strong:** Mole (animal digs/cleans), Dust, Gomi (JP trash).  

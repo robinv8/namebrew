@@ -89,13 +89,13 @@ Reference for `namebrew`. Prefer schools that match the user's tone; cite exempl
 | p0deje | Maccy | H |
 | casey | just | C |
 | ggerganov | llama.cpp, whisper.cpp, ggml | B E |
-| karpathy | nanoGPT, micrograd, makemore | G scale-prefix |
+| karpathy | nanoGPT, micrograd, makemore | G (scale-prefix) |
 | folke | lazy.nvim, flash, noice, trouble | C D |
 | pmndrs | zustand, jotai, valtio | A (loanwords) |
 | derailed | k9s | D |
 | wagoodman | dive | C |
 | jarun | nnn, buku | E |
-| chubin | cheat.sh, wttr.in | domain-as-name |
+| chubin | cheat.sh, wttr.in | E (domain-as-name) |
 | heyman | heynote | H |
 | emilkowalski | sonner, vaul | E |
 | fatedier | frp | E (abbrev infra) |
