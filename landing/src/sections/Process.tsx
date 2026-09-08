@@ -1,9 +1,9 @@
 import { Compass, Shuffle, BarChart3, SearchCheck, Trophy } from 'lucide-react'
 
 const STEPS = [
-  { icon: Compass, title: 'Frame', desc: 'Intent, surface, tone schools' },
-  { icon: Shuffle, title: 'Diverge', desc: '16–24 candidates across naming schools' },
-  { icon: BarChart3, title: 'Score', desc: 'Length, speak, fit, draw, install' },
+  { icon: Compass, title: 'Frame', desc: 'Intent, surface, the one picture' },
+  { icon: Shuffle, title: 'Diverge', desc: '12–16 names from that picture, not a school quota' },
+  { icon: BarChart3, title: 'Score', desc: 'Click first, then length, speak, draw, install' },
   { icon: SearchCheck, title: 'Search', desc: 'GitHub / web / npm · PyPI · crates' },
   { icon: Trophy, title: 'Deliver', desc: 'Top 5 + Avoid list, Clear → Taken labels' },
 ]
@@ -18,7 +18,7 @@ export default function Process() {
         A brew pipeline, not a slot machine.
       </h2>
       <p className="mt-4 max-w-2xl font-mono2 text-sm text-muted-foreground">
-        Frame → Diverge (16–24) → Score → Collision search → Top 5 + Avoid list
+        Frame → Look, then name (12–16) → Score → Collision search → Top 5 + Avoid list
       </p>
 
       <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

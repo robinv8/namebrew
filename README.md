@@ -90,7 +90,7 @@ Weak:   Web2Desktopify, ElectronLiteApp, Packly
 ## How it works
 
 ```text
-Frame → Diverge (16–24) → Score → Collision search → Top 5 + Avoid list
+Frame → Look, then name (12–16) → Score → Collision search → Top 5 + Avoid list
 ```
 
 Ranked names carry **Clear / Crowded / Taken / Risky** labels from live GitHub / web / npm · PyPI · crates checks. No Top 5 without live search — short dictionary words are often *Crowded*, not free, and the skill says so.
