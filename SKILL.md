@@ -70,9 +70,8 @@ If intent is vague, ask **one** clarifying question, then proceed with stated as
 | G Domain compound | Clear function blend | firecrawl, dayjs, zoxide | Need instant meaning |
 | H Nickname | Spoken diminutive | Maccy, heynote, aider | Desktop / personal apps |
 
-Default mix for a general tool: **A + B + C + E** (8–12 names).  
-If the user likes tw93: weight **A + B + F**.  
-If Rust/Go CLI: weight **C + E + B**.
+Schools are labels you may notice after a name exists. Do not generate by filling them.  
+Do not weight a brief toward A/B/C because the user said CLI, Chinese, or tw93.
 
 ## Process
 
@@ -87,10 +86,20 @@ Tone schools: …
 Hard constraints: …
 ```
 
-### 2. Diverge
+### 2. Look, then name
 
-Generate **16–24** raw candidates across chosen schools.  
-For each: `name | school | one-line story | drawable cue | install id`.
+Look at this product only. Name the one picture: what it does in a breath, for whom, what would be wrong to call it.
+
+Then find **12–16** names from that picture. Not from a school quota. Not from the exemplar table.
+
+For each: `name | click (≤8 words, why this thing not a cousin tool) | drawable cue | install id`.
+
+Discard immediately:
+- a name that would fit any cleaner, any CLI, any notes app
+- a recycled exemplar or its cousin (Mole, Dust, Gomi, Pake, Wrap, Shell, Kaku, Glow, Aide, and the same joke again)
+- a school costume: random animal, random object, random pinyin, because the table said so
+
+A stunning name is unexpected, then obvious. Not a weirder spelling. Not a longer phrase.
 
 ### 3. Converge (score)
 
@@ -98,12 +107,14 @@ Score 1–5 on each dimension (Availability starts as a **pre-check estimate** o
 
 | Dimension | 5 means |
 |-----------|---------|
+| Click | Unexpected, then obvious. This product, not a cousin. |
 | Length | ≤2 syllables, clean spelling |
 | Speak | No ambiguity in EN (and CN if relevant) |
-| Fit | Story matches intent |
 | Draw | Obvious simple icon |
 | Availability | Later: filled from live search (step 4) |
 | Install | Good package / binary name |
+
+Drop names that only score well on short, cute, or drawable. Click below 4 does not enter the shortlist.
 
 Keep a **shortlist of 10–16** quality names. Drop corporate, unreadable, or undrawable options.  
 Do **not** finalize Top 5 until step 4 finishes.
@@ -208,6 +219,8 @@ Style buckets: geometric lettermark | animal silhouette | object glyph | abstrac
 Reject or rewrite if:
 
 - Sounds like a YC batch generator (vowel-consonant brand salad)
+- Would fit any tool in the category (another animal cleaner, another light for AI)
+- Copied from the exemplar list or the few-shot names
 - More than 4 syllables without a strong cultural reason
 - Needs a paragraph to explain the pun
 - Collides with household OSS (react, vue, redis, ollama, …) — call out and replace
@@ -225,18 +238,21 @@ Reject or rewrite if:
 
 ## Few-shot reasoning
 
-These show strong/weak *shape*, not availability: **Mole** and **Pake** are real shipped projects, and a live run (step 4) would mark them **Taken** and replace them.
+Shape only. Do not reuse these names. A live collision check still decides Top.
 
 **Intent:** Mac terminal cleaner for leftover app files.  
-**Strong:** Mole (animal digs/cleans), Dust, Gomi (JP trash).  
-**Weak:** CleanMasterPro, MacNexlify, AppResidueRemover.
+**Click:** Lint — the little bits a build leaves behind.  
+**Flat:** Mole, Dust, Sweep. Any animal that “digs.”  
+**Weak:** CleanMasterPro, MacNexlify.
 
 **Intent:** Pack any URL into a tiny desktop app.  
-**Strong:** Pake (pack), Wrap, Shell.  
+**Click:** Tin — a site pressed into a pocket thing.  
+**Flat:** Wrap, Shell, Pack. Any container noun.  
 **Weak:** Web2Desktopify, ElectronLiteApp.
 
 **Intent:** AI coding terminal.  
-**Strong:** Kaku (write), Glow, Aide.  
+**Click:** Hatch — where a change comes out, not a cockpit.  
+**Flat:** Glow, Aide, Pilot. Any light or helper.  
 **Weak:** SuperAICodeTerminal, CodePilotX.
 
 ## References
